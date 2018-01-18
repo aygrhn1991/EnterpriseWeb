@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EnterpriseWeb.Models.DB;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,6 +14,8 @@ namespace EnterpriseWeb
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            EntityDB entity = new EntityDB();
+            entity.Database.CreateIfNotExists();
         }
     }
 }

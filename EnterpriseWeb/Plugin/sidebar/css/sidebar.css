@@ -1,0 +1,150 @@
+﻿ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.sidebar {
+    width: 220px;
+    min-height: 100%;
+    background: #333333;
+    transition: all .3s;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+    .sidebar a {
+        display: block;
+        overflow: hidden;
+        padding-left: 20px;
+        line-height: 46px;
+        height: 46px;
+        color: white;
+        transition: all .3s;
+    }
+
+        .sidebar a span {
+            margin-left: 30px;
+        }
+
+.sidebar-item {
+    position: relative;
+}
+
+
+    .sidebar-item ul {
+        display: none;
+        background: #999999;
+    }
+
+    .sidebar-item.sidebar-show ul {
+        display: block;
+    }
+
+    .sidebar-item > a:before {
+        content: "";
+        position: absolute;
+        left: 0px;
+        width: 2px;
+        height: 46px;
+        background: white;
+        opacity: 0;
+        transition: all .3s;
+    }
+
+.sidebar-mini.sidebar {
+    width: 60px;
+}
+
+    .sidebar-mini.sidebar .sidebar-item > a span {
+        display: none;
+    }
+
+    .sidebar-mini.sidebar .sidebar-more {
+        display: none;
+    }
+
+    .sidebar-mini.sidebar .sidebar-item ul {
+        position: absolute;
+        top: 0px;
+        left: 60px;
+        width: 180px;
+        z-index: 99;
+        background: #999999;
+        overflow: hidden;
+    }
+
+    .sidebar-mini.sidebar .sidebar-item:hover {
+        background: #666666;
+    }
+
+        .sidebar-mini.sidebar .sidebar-item:hover a:before {
+            opacity: 1;
+        }
+
+        .sidebar-mini.sidebar .sidebar-item:hover ul {
+            display: block;
+        }
+
+.sidebar-show,
+.sidebar-item > a:hover {
+    color: white;
+    background: #666666;
+}
+
+    .sidebar-show > a:before,
+    .sidebar-item > a:hover:before {
+        opacity: 1;
+    }
+
+.sidebar-item li:hover a {
+    color: white;
+    background: #cccccc;
+}
+
+.sidebar-top {
+    font-size: 26px;
+    padding: 10px 0 5px 16px;
+    cursor: pointer;
+    color: white;
+    border-bottom: 1px solid #999999;
+}
+
+.sidebar-tip {
+    font-size: 20px;
+    position: absolute;
+    margin-top: 10px;
+}
+
+.sidebar-more {
+    float: right;
+    margin: 15px 20px 0 0;
+    font-size: 12px;
+    transition: transform .3s;
+}
+
+.sidebar-show .sidebar-more {
+    transform: rotate(-90deg);
+}
+
+.main {
+    margin: 20px 0 0 240px;
+    min-height: 100%;
+    transition: all .3s;
+}
+
+.main-show {
+    margin-left: 80px;
+}
+
+.main-mini {
+    margin-left: 240px;
+}

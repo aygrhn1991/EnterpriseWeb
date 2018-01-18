@@ -113,6 +113,8 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Plugin\sidebar\css\sidebar.css" />
+    <Content Include="Plugin\sidebar\js\sidebar.js" />
     <Content Include="Scripts\admin\admin-nav.js" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular-route.js" />
@@ -151,6 +153,7 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-2.2.4.min.map" />
     <Content Include="Views\Error\Error.cshtml" />
+    <Content Include="Views\Shared\_Partial_Admin_Sidebar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -160,6 +163,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Plugin\sidebar\img\" />
     <Folder Include="Views\Home\" />
   </ItemGroup>
   <PropertyGroup>
