@@ -1,17 +1,4 @@
-﻿ul {
-    margin: 0;
-    padding: 0;
-}
-
-li {
-    list-style: none;
-}
-
-a {
-    text-decoration: none !important;
-}
-
-.sidebar {
+﻿.sidebar {
     width: 220px;
     min-height: 100%;
     background: #333333;
