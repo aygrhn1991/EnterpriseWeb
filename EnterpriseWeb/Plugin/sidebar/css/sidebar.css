@@ -44,8 +44,9 @@ a {
         background: #999999;
     }
 
-    .sidebar-item.sidebar-show ul {
-        display: block;
+    .sidebar-item li:hover a {
+        color: white;
+        background: #cccccc;
     }
 
     .sidebar-item > a:before {
@@ -59,55 +60,63 @@ a {
         transition: all .3s;
     }
 
-.sidebar-mini.sidebar {
-    width: 60px;
+    .sidebar-item > a:hover {
+        color: white;
+        background: #666666;
+    }
+
+        .sidebar-item > a:hover:before {
+            opacity: 1;
+        }
+
+.sidebar-show {
+    background: #666666;
 }
 
-    .sidebar-mini.sidebar .sidebar-item > a span {
+    .sidebar-show ul {
+        display: block;
+    }
+
+    .sidebar-show > a:before {
+        opacity: 1;
+    }
+
+    .sidebar-show .sidebar-more {
+        transform: rotate(-90deg);
+    }
+
+.sidebar-mini {
+    width: 60px !important;
+}
+
+    .sidebar-mini .sidebar-more {
         display: none;
     }
 
-    .sidebar-mini.sidebar .sidebar-more {
+    .sidebar-mini .sidebar-item > a span {
         display: none;
     }
 
-    .sidebar-mini.sidebar .sidebar-item ul {
+    .sidebar-mini .sidebar-item ul {
         position: absolute;
         top: 0px;
         left: 60px;
         width: 180px;
         z-index: 99;
-        background: #999999;
         overflow: hidden;
     }
 
-    .sidebar-mini.sidebar .sidebar-item:hover {
+    .sidebar-mini .sidebar-item:hover {
         background: #666666;
     }
 
-        .sidebar-mini.sidebar .sidebar-item:hover a:before {
+        .sidebar-mini .sidebar-item:hover a:before {
             opacity: 1;
         }
 
-        .sidebar-mini.sidebar .sidebar-item:hover ul {
+        .sidebar-mini .sidebar-item:hover ul {
             display: block;
         }
-
-.sidebar-show,
-.sidebar-item > a:hover {
-    color: white;
-    background: #666666;
-}
-
-    .sidebar-show > a:before,
-    .sidebar-item > a:hover:before {
-        opacity: 1;
-    }
-
-.sidebar-item li:hover a {
-    color: white;
-    background: #cccccc;
-}
 
 .sidebar-top {
     font-size: 26px;
@@ -130,20 +139,17 @@ a {
     transition: transform .3s;
 }
 
-.sidebar-show .sidebar-more {
-    transform: rotate(-90deg);
-}
-
 .main {
-    margin: 20px 0 0 240px;
+    margin-left: 220px;
+    padding: 20px;
     min-height: 100%;
     transition: all .3s;
 }
 
 .main-show {
-    margin-left: 80px;
+    margin-left: 60px;
 }
 
 .main-mini {
-    margin-left: 240px;
+    margin-left: 220px;
 }

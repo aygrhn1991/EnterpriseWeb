@@ -8,19 +8,46 @@
     <script src="~/Scripts/jquery-2.2.4.js"></script>
     <script src="~/Scripts/bootstrap.js"></script>
     <script src="~/Scripts/angular.js"></script>
-    <!--侧边栏开始-->
+    <!--配置begin-->
+    <script src="~/Scripts/admin/admin-config.js"></script>
+    <!--配置end-->
+    <!--导航begin-->
+    <script src="~/Scripts/admin/admin-nav.js"></script>
+    <!--导航end-->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--侧边栏begin-->
     <link href="~/Plugin/sidebar/css/sidebar.css" rel="stylesheet" />
     <script src="~/Plugin/sidebar/js/sidebar.js"></script>
-    <!--侧边栏结束-->
-    <!--表格开始-->
+    <!--侧边栏end-->
+    <!--表格begin-->
     <link href="~/Plugin/datatable/css/jquery.dataTables.css" rel="stylesheet" />
     <script src="~/Plugin/datatable/js/jquery.dataTables.js"></script>
-    <!--表格结束-->
+    <!--表格end-->
+    <!--加载动画begin-->
+    <link href="~/Plugin/loader/css/fakeLoader.css" rel="stylesheet" />
+    <script src="~/Plugin/loader/js/fakeLoader.js"></script>
+    <!--加载动画end-->
+    <!--自定义begin-->
+    <link href="~/Content/admin/admin.css" rel="stylesheet" />
+    <script src="~/Scripts/admin/admin.js"></script>
+    <!--自定义end-->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
 </head>
-<body>
+<body ng-app="app">
     @Html.Partial("_Partial_Admin_Sidebar")
     <div class="main">
         @RenderBody()
     </div>
+    @Html.Partial("_Partial_Admin_Loader")
 </body>
 </html>
