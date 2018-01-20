@@ -14,6 +14,7 @@ namespace EnterpriseWeb.Controllers
         {
             return View();
         }
+        #region 导航管理
         public ActionResult NavList()
         {
             return View();
@@ -21,9 +22,23 @@ namespace EnterpriseWeb.Controllers
         public ActionResult NavList_Get()
         {
             var query = entity.nav.OrderBy(p => p.sort);
-            //System.Threading.Thread.Sleep(3000);
-
             return Json(query, JsonRequestBehavior.AllowGet);
         }
+        #endregion
+        #region 单页管理
+        public ActionResult PageList()
+        {
+            return View();
+        }
+        public ActionResult PageList_Get()
+        {
+            var query = entity.nav.OrderBy(p => p.sort);
+            return Json(query, JsonRequestBehavior.AllowGet);
+        }
+        public ActionResult PageAdd()
+        {
+            return View();
+        }
+        #endregion
     }
 }

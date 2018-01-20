@@ -126,6 +126,11 @@
     transition: transform .3s;
 }
 
+.sidebar-active {
+    color: white;
+    background: #cccccc;
+}
+
 .main {
     margin-left: 220px;
     padding: 20px;

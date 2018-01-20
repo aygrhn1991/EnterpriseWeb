@@ -1,23 +1,32 @@
-﻿<div class="sidebar">
+﻿@{
+    var actionName = ViewContext.RouteData.Values["action"].ToString().ToLower();
+}
+<div class="sidebar">
     <div class="sidebar-top">
         <i class="glyphicon glyphicon-list"></i>
     </div>
     <ul>
-        @for (int i = 0; i <= 20; i++)
-        {
-            <li class="sidebar-item">
-                <a href="javascript:;">
-                    <i class="glyphicon glyphicon-th-large sidebar-tip"></i>
-                    <span>网站配置</span>
-                    <i class="glyphicon glyphicon-menu-left sidebar-more"></i>
-                </a>
-                <ul>
-                    <li><a href="javascript:;"><span>网站设置</span></a></li>
-                    <li><a href="javascript:;"><span>友情链接</span></a></li>
-                    <li><a href="javascript:;"><span>分类管理</span></a></li>
-                    <li><a href="javascript:;"><span>系统日志</span></a></li>
-                </ul>
-            </li>
-        }
+        <li class="sidebar-item @(actionName.StartsWith("Nav".ToLower())?"sidebar-show":"")">
+            <a href="javascript:;">
+                <i class="glyphicon glyphicon-th-large sidebar-tip"></i>
+                <span>导航管理</span>
+                <i class="glyphicon glyphicon-menu-left sidebar-more"></i>
+            </a>
+            <ul>
+                <li><a href="/Admin/NavList" class="@(actionName=="NavList".ToLower()?"sidebar-active":"")"><span>导航列表</span></a></li>
+            </ul>
+        </li>
+        <li class="sidebar-item @(actionName.StartsWith("Page".ToLower())?"sidebar-show":"")">
+            <a href="javascript:;">
+                <i class="glyphicon glyphicon-th-large sidebar-tip"></i>
+                <span>单页管理</span>
+                <i class="glyphicon glyphicon-menu-left sidebar-more"></i>
+            </a>
+            <ul>
+                <li><a href="/Admin/PageList" class="@(actionName=="PageList".ToLower()?"sidebar-active":"")"><span>单页列表</span></a></li>
+                <li><a href="/Admin/PageAdd" class="@(actionName=="PageAdd".ToLower()?"sidebar-active":"")"><span>单页添加</span></a></li>
+            </ul>
+        </li>
+
     </ul>
 </div>
