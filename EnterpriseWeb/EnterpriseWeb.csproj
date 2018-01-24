@@ -102,6 +102,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\EnterpriseWeb.mdf" />
+    <Content Include="App_Data\EnterpriseWeb_log.ldf">
+      <DependentUpon>EnterpriseWeb.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -433,7 +437,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\DB\EntityDB.cs" />
-    <Compile Include="Models\DB\nav.cs" />
+    <Compile Include="Models\DB\nav_nav.cs" />
+    <Compile Include="Models\DB\nav_subnav.cs" />
+    <Compile Include="Models\DB\page.cs" />
     <Compile Include="Plugin\ueditor\net\App_Code\Config.cs" />
     <Compile Include="Plugin\ueditor\net\App_Code\ConfigHandler.cs" />
     <Compile Include="Plugin\ueditor\net\App_Code\CrawlerHandler.cs" />
@@ -462,7 +468,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Plugin\loader\images\" />
     <Folder Include="Plugin\sidebar\images\" />
     <Folder Include="Plugin\ueditor\net\upload\file\" />

@@ -21,7 +21,7 @@ namespace EnterpriseWeb.Controllers
         }
         public ActionResult NavList_Get()
         {
-            var query = entity.nav.OrderBy(p => p.sort);
+            var query = entity.nav_nav.OrderBy(p => p.sort);
             return Json(query, JsonRequestBehavior.AllowGet);
         }
         #endregion
@@ -30,14 +30,46 @@ namespace EnterpriseWeb.Controllers
         {
             return View();
         }
-        public ActionResult PageList_Get()
-        {
-            var query = entity.nav.OrderBy(p => p.sort);
-            return Json(query, JsonRequestBehavior.AllowGet);
-        }
         public ActionResult PageAdd()
         {
             return View();
+        }
+        public ActionResult PageList_Get()
+        {
+            var query = entity.page.OrderBy(p => p.id);
+            return Json(query, JsonRequestBehavior.AllowGet);
+        }
+        public ActionResult Page_Get(int id)
+        {
+            var query = entity.page.FirstOrDefault(p => p.id == id);
+            return Json(query, JsonRequestBehavior.AllowGet);
+        }
+        [ValidateInput(false)]
+        public ActionResult Page_Add_Edit(int id, string title, string content)
+        {
+            if (id == 0)
+            {
+                page page = new page()
+                {
+                    title = title,
+                    content = content,
+                    sys_datetime = DateTime.Now
+                };
+                entity.page.Add(page);
+            }
+            else
+            {
+                var query = entity.page.FirstOrDefault(p => p.id == id);
+                query.title = title;
+                query.content = content;
+            }
+            return Json(entity.SaveChanges() > 0, JsonRequestBehavior.AllowGet);
+        }
+        public ActionResult Page_Delete(int id)
+        {
+            var query = entity.page.FirstOrDefault(p => p.id == id);
+            entity.page.Remove(query);
+            return Json(entity.SaveChanges() > 0, JsonRequestBehavior.AllowGet);
         }
         #endregion
     }

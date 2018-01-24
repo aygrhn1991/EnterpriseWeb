@@ -2,9 +2,7 @@
     var actionName = ViewContext.RouteData.Values["action"].ToString().ToLower();
 }
 <div class="sidebar">
-    <div class="sidebar-top">
-        <i class="glyphicon glyphicon-list"></i>
-    </div>
+    <div class="sidebar-top"></div>
     <ul>
         <li class="sidebar-item @(actionName.StartsWith("Nav".ToLower())?"sidebar-show":"")">
             <a href="javascript:;">
@@ -24,9 +22,25 @@
             </a>
             <ul>
                 <li><a href="/Admin/PageList" class="@(actionName=="PageList".ToLower()?"sidebar-active":"")"><span>单页列表</span></a></li>
-                <li><a href="/Admin/PageAdd" class="@(actionName=="PageAdd".ToLower()?"sidebar-active":"")"><span>单页添加</span></a></li>
+                <li><a href="/Admin/PageAdd?id=0" class="@(actionName=="PageAdd".ToLower()?"sidebar-active":"")"><span>单页添加</span></a></li>
             </ul>
         </li>
-
+        @for (int i = 0; i < 7; i++)
+        {
+            <li class="sidebar-item">
+                <a href="javascript:;">
+                    <i class="glyphicon glyphicon-th-large sidebar-tip"></i>
+                    <span>侧边栏</span>
+                    <i class="glyphicon glyphicon-menu-left sidebar-more"></i>
+                </a>
+                <ul>
+                    <li><a href="/Admin/PageList" class="@(actionName=="PageList".ToLower()?"sidebar-active":"")"><span>单页列表</span></a></li>
+                    <li><a href="/Admin/PageAdd" class="@(actionName=="PageAdd".ToLower()?"sidebar-active":"")"><span>单页添加</span></a></li>
+                    <li><a href="/Admin/PageAdd" class="@(actionName=="PageAdd".ToLower()?"sidebar-active":"")"><span>单页添加</span></a></li>
+                    <li><a href="/Admin/PageAdd" class="@(actionName=="PageAdd".ToLower()?"sidebar-active":"")"><span>单页添加</span></a></li>
+                    <li><a href="/Admin/PageAdd" class="@(actionName=="PageAdd".ToLower()?"sidebar-active":"")"><span>单页添加</span></a></li>
+                </ul>
+            </li>
+        }
     </ul>
 </div>

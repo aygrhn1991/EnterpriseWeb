@@ -1,14 +1,21 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout_Admin.cshtml";
 }
-<style>
-    * {
-        box-sizing: initial;
-    }
-</style>
+
 <div ng-controller="pageAdd">
-    <script id="container" name="content" type="text/plain">
-        这里写你的初始化内容
-    </script>
+    <form>
+        <div class="form-group">
+            <label>标题：</label>
+            <input type="text" class="form-control" placeholder="请输入单页标题..." ng-model="pageModel.title">
+        </div>
+        <div class="form-group">
+            <label>正文：</label>
+            <script id="container" name="content" type="text/plain">
+            </script>
+        </div>
+        <div class="form-group text-center">
+            <button type="button" class="btn btn-success" ng-click="save()">保&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;存</button>
+        </div>
+    </form>
 </div>
 
