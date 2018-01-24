@@ -465,6 +465,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Plugin\loader\images\" />
     <Folder Include="Plugin\sidebar\images\" />
+    <Folder Include="Plugin\ueditor\net\upload\image\" />
     <Folder Include="Views\Home\" />
   </ItemGroup>
   <PropertyGroup>
